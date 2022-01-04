@@ -1,2 +1,2 @@
 # markdown-blog
-Blog built using Node.js, Express, MongoDB, and Vanilla JavaScript
+Blog built using Node.js, Express, MongoDB, and EJS
