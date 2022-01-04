@@ -22,23 +22,11 @@
 
 <body>
     <div class="container">
-        <div class="mb-4 header">
-        <h1>Deep Thoughts</h1>
-        <h4>by Sarah D.</h4>
-    </div>
-        <button class="btn new-btn">
-        <a href="/posts/new">New Post</a>
-    </button>
-    <% posts.forEach(posts => { %>
-        <div class="card mt-4">
-            <div class="card-body">
-              <h4 class="card-title"><%= posts.title %></h4>
-              <div class="card-subtitle text-muted mb-2"><%= posts.dateCreated.toLocaleDateString() %></div>
-              <p class="card-text mb-2"><%= posts.description %></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    <%}) %>
+        <h1 class="header">New Post</h1>
+
+        <form action="/blogposts" method="POST">
+            <%- include('_form_fields') %>
+        </form>
     </div>
 </body>
 
