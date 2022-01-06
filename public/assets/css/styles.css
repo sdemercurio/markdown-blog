@@ -13,13 +13,12 @@
 }
 
 .new-btn {
-    background-color: rgb(115, 0, 255);
-    border-radius: 25px;
+    background-color: rgb(0, 157, 255);
+    border-radius: 15px;
     padding: 10px;
     width: 100px;
     font-family: 'Raleway', sans-serif;
     color: white;
-    filter: drop-shadow(4px 4px 3px #656571);
 }
 
 .new-btn > a {
@@ -35,5 +34,47 @@
     width: 100px;
     font-family: 'Raleway', sans-serif;
     color: white;
-    filter: drop-shadow(4px 4px 3px #656571);
+    margin-right: 15px;
+}
+
+.all-btn {
+    background-color: rgb(80, 149, 233);
+    border-radius: 15px;
+    padding: 10px;
+    width: 100px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    margin-right: 15px;
+}
+
+.edit-btn {
+    border-color: rgb(19, 185, 141);
+    background-color: white;
+    border-width: 5px;
+    border-radius: 15px;
+    padding: 8px;
+    width: 100px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(19, 185, 141);
+    margin-right: 15px;
+}
+
+.show-btn {
+    background-color: rgb(19, 185, 141);
+    border-radius: 15px;
+    padding: 10px;
+    width: 120px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    margin-right: 15px;
+}
+
+.delete-btn {
+    background-color: rgb(44, 19, 185);
+    border-radius: 15px;
+    padding: 10px;
+    width: 120px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    margin-right: 15px;
 }

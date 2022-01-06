@@ -1,4 +1,10 @@
 const mongoose = require('mongoose');
+const marked = require('marked');
+const slugify = require('slugify');
+const createDomPurify = require('dompurify');
+const { JSDOM } = require('jsdom');
+const dompurify = createDomPurify(new JSDOM().window);
+
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -15,7 +21,21 @@ const postSchema = new mongoose.Schema({
     dateCreated: {
         type: Date,
         default: Date.now()
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true
     }
 });
 
-module.exports = mongoose.model('blogPost', postSchema)
+postSchema.pre('validate', function() {
+    if (this.title) {
+        this.slug = slugify(this.title, { lower: true,
+        strict: true })
+    }
+
+    next();
+})
+
+module.exports = mongoose.model('blogPost', postSchema);

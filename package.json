@@ -10,10 +10,14 @@
   "author": "Sarah DeMercurio",
   "license": "MIT",
   "dependencies": {
+    "dompurify": "^2.3.4",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "mongoose": "^6.1.4"
+    "jsdom": "^19.0.0",
+    "marked": "^4.0.8",
+    "mongoose": "^6.1.4",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

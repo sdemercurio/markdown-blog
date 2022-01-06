@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const blogPost = require('./models/blogpost');
 const postRouter = require('./routes/blogposts');
+const methodOverride = require('method-override');
 const app = express();
 
 const connectDB = async () => {
@@ -17,23 +19,14 @@ const connectDB = async () => {
 connectDB();
 
 app.set('view engine', 'ejs');
-
 app.use('/public', express.static('public'));
-
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
-app.get('/', (req, res) => {
-    const blogposts = [{
-        title: 'Test Post',
-        dateCreated: new Date(),
-        description: 'Test description'
-    },
-    {
-        title: 'Test Post 2',
-        dateCreated: new Date(),
-        description: 'Test description 2'
-    }
-    ]
+app.get('/', async (req, res) => {
+    const blogposts = await blogPost.find().sort({
+        dateCreated: 'desc'})
+    
     res.render('blogposts/index', { blogposts: blogposts })
 })
 

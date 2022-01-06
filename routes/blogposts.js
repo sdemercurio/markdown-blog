@@ -6,8 +6,9 @@ router.get('/new', (req, res) => {
     res.render('blogposts/new', { blogpost: new blogPost() })
 });
 
-router.get('/:id', (req, res) => {
-    const blogpost = blogPost.findById(req.params.id)
+router.get('/:slug', async (req, res) => {
+    const blogpost = await blogPost.findOne({ slug: req.params.slug })
+    if (blogpost == null) res.redirect('/')
     res.render('blogposts/show', { blogpost: blogpost })
 });
 
@@ -19,13 +20,16 @@ router.post('/', async (req, res) => {
     })
     try {
       blogpost = await  blogpost.save()
-      res.redirect(`/blogposts/${blogpost.id}`)
+      res.redirect(`/blogposts/${blogpost.slug}`)
     } catch (e) {
         
         res.render('blogposts/new', { blogpost : blogpost })
     }
+});
 
-  
+router.delete('/:id', async (req, res) => {
+    await blogPost.findByIdAndDelete(req.params.id)
+    res.redirect('/');
 });
 
 module.exports = router

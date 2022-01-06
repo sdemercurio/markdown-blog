@@ -22,26 +22,13 @@
 
 <body>
     <div class="container">
-        <div class="mb-4 header">
-        <h1>Deep Thoughts</h1>
-        <h4>by Sarah D.</h4>
-    </div>
-        <button class="btn new-btn">
-        <a href="/blogposts/new">New Post</a>
-    </button>
-    <% blogposts.forEach(blogpost => { %>
-        <div class="card mt-4">
-            <div class="card-body">
-              <h4 class="card-title"><%= blogpost.title %></h4>
-              <div class="card-subtitle text-muted mb-2"><%= blogpost.dateCreated.toLocaleDateString() %></div>
-              <p class="card-text mb-2"><%= blogpost.description %></p>
-              <a href="blogposts/<%= blogpost.slug %>" class="btn show-btn">Read More</a>
-          <form action="/blogposts/<%= blogpost.id %>?_method=DELETE" method="POST" class="d-inline">
-        <button type="submit" class="btn delete-btn">Delete</button>
-    </form>
-            </div>
-          </div>
-    <%}) %>
+        <h1 class="header"><%= blogpost.title %></h1>
+        <div calss="test-muted mb-4"><%= blogpost.dateCreated.toLocaleDateString() %></div>
+        <a href="/" class="btn all-btn">All Posts</a>
+        <a href="/blogposts/edit/<%= blogpost.id %>" class="btn edit-btn">Edit</a>
+        <div class="mt-4">
+            <%= blogpost.markdown %>
+        </div>
     </div>
 </body>
 
