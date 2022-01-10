@@ -22,13 +22,11 @@
 
 <body>
     <div class="container">
-        <h1 class="header"><%= blogpost.title %></h1>
-        <div calss="test-muted mb-4"><%= blogpost.dateCreated.toLocaleDateString() %></div>
-        <a href="/" class="btn all-btn">All Posts</a>
-        <a href="/blogposts/edit/<%= blogpost.id %>" class="btn edit-btn">Edit</a>
-        <div class="mt-4">
-            <%- blogpost.sanitizedHtml %>
-        </div>
+        <h1 class="header">Edit Post</h1>
+
+        <form action="/blogposts/<%= blogpost.id %>?_method=PUT" method="POST">
+            <%- include('_form_fields') %>
+        </form>
     </div>
 </body>
 
