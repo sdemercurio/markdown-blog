@@ -3,8 +3,19 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.card {
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+    border-width: 3px;
+}
+
 .header {
     margin-top: 50px;
+    background-color: #6200EE;
+    color: white;
+    padding: 10px;
 }
 
 .header > h1 {
@@ -13,7 +24,7 @@
 }
 
 .new-btn {
-    background-color: rgb(0, 157, 255);
+    background-color: #6200EE;
     border-radius: 15px;
     padding: 10px;
     width: 100px;
@@ -28,17 +39,17 @@
 }
 
 .cancel-btn {
-    background-color: rgb(233, 80, 95);
-    border-radius: 25px;
+    background-color: #03Dac5;
+    border-radius: 15px;
     padding: 10px;
     width: 100px;
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: black;
     margin-right: 15px;
 }
 
 .all-btn {
-    background-color: rgb(80, 149, 233);
+    background-color: #03Dac5;
     border-radius: 15px;
     padding: 10px;
     width: 100px;
@@ -48,19 +59,18 @@
 }
 
 .edit-btn {
-    border-color: rgb(19, 185, 141);
-    background-color: white;
+    background-color: #0d3ac5;
     border-width: 5px;
     border-radius: 15px;
     padding: 8px;
     width: 100px;
     font-family: 'Raleway', sans-serif;
-    color: rgb(19, 185, 141);
+    color: white;
     margin-right: 15px;
 }
 
 .show-btn {
-    background-color: rgb(19, 185, 141);
+    background-color: #03Dac5;
     border-radius: 15px;
     padding: 10px;
     width: 120px;
@@ -70,11 +80,28 @@
 }
 
 .delete-btn {
-    background-color: rgb(44, 19, 185);
+    background-color: #3700B3;
     border-radius: 15px;
     padding: 10px;
     width: 120px;
     font-family: 'Raleway', sans-serif;
     color: white;
     margin-right: 15px;
+}
+
+label {
+    font-family: 'Raleway', sans-serif
+}
+
+#title-label {
+    margin-top: 25px;
+}
+
+#markdown {
+    margin-bottom: 25px;
+    height: 300px;
+}
+
+.test-muted {
+    margin: 25px 0;
 }

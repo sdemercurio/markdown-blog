@@ -23,10 +23,10 @@
 <body>
     <div class="container">
         <h1 class="header"><%= blogpost.title %></h1>
-        <div calss="test-muted mb-4"><%= blogpost.dateCreated.toLocaleDateString() %></div>
+        <div class="test-muted mb-4"><%= blogpost.dateCreated.toLocaleDateString() %></div>
         <a href="/" class="btn all-btn">All Posts</a>
         <a href="/blogposts/edit/<%= blogpost.id %>" class="btn edit-btn">Edit</a>
-        <div class="mt-4">
+        <div class="mt-4 card">
             <%- blogpost.sanitizedHtml %>
         </div>
     </div>
