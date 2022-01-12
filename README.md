@@ -4,6 +4,9 @@ The user can create a new post, edit the new post, or delete the post. The user 
 
 [![Watch the video](public/assets/images/youtube_still.png)](https://www.youtube.com/watch?v=US28G_Lv9sk)
 
+### App deployed at:
+https://node-mongo-express-app.herokuapp.com/
+
 
 ## Developer: 
 Sarah DeMercurio
