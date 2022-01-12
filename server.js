@@ -5,6 +5,7 @@ const blogPost = require('./models/blogpost');
 const postRouter = require('./routes/blogposts');
 const methodOverride = require('method-override');
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 const connectDB = async () => {
     try {
@@ -37,4 +38,4 @@ mongoose.connection.once('open', () => {
 
 app.use('/blogposts', postRouter);
 
-app.listen(5000)
+app.listen(PORT, console.log(`Server is running on ${PORT}`));
